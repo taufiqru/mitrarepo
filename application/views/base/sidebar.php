@@ -34,13 +34,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?=base_url()?>/mitra/table" class="nav-link">
+                <a href="<?=base_url()?>mitra/table" class="nav-link">
                   <i class="far fas fa-th-list nav-icon"></i>
                   <p>Daftar Mitra</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url()?>/mitra/add" class="nav-link">
+                <a href="<?=base_url()?>mitra/add" class="nav-link">
                   <i class="far fa-plus-square nav-icon"></i>
                   <p>Tambah Mitra</p>
                 </a>

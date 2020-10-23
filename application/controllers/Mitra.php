@@ -21,6 +21,58 @@ class Mitra extends CI_Controller{
 		$this->show('tabel_mitra.php',$output);
 	}
 
+	public function insert(){
+		$this->load->model('ModelMitra');
+
+		$namaperusahaan = $this->input->post('namaperusahaan');
+	    $kemampuannyata = $this->input->post('kemampuannyata');
+	    $tenagaahli = $this->input->post('tenagaahli');
+	    $namadirektur = $this->input->post('namadirektur');
+	    $jabatandirektur = $this->input->post('jabatandirektur');
+	    $kontakdirektur = $this->input->post('kontakdirektur');
+	    $namanarahubung = $this->input->post('namanarahubung');
+	    $jabatannarahubung = $this->input->post('jabatannarahubung');
+	    $kontaknarahubung = $this->input->post('kontaknarahubung');
+	    $alamatkantor = $this->input->post('alamatkantor');
+	    $statuskantor = $this->input->post('statuskantor');
+
+	    $datamitra = array(
+	    	'nama' => $namaperusahaan,
+	    	'kemampuan_nyata' => $kemampuannyata,
+	    	'tenaga_ahli' => $tenagaahli
+	    );
+
+	    $status = $this->ModelMitra->insertDataMitra($datamitra);
+
+	    if($status != false){
+	    	$datakantor = array(
+	    		'id_mitra' => $status,
+	    		'alamat' => $alamatkantor,
+	    		'status' => $statuskantor
+	    	);
+	    	$this->ModelMitra->insertAlamatKantor($datakantor);
+
+	    	$datadirektur = array(
+	    		'id_mitra' => $status,
+	    		'nama' => $namadirektur,
+	    		'jabatan' => $jabatandirektur,
+	    		'kontak' => $kontakdirektur
+	    	);
+	    	$this->ModelMitra->insertDataDirektur($datadirektur);
+
+	    	$datanarahubung = array(
+	    		'id_mitra' => $status,
+	    		'nama' => $namanarahubung,
+	    		'jabatan' => $jabatannarahubung,
+	    		'kontak' => $kontaknarahubung
+	    	);
+	    	$this->ModelMitra->insertDataNarahubung($datanarahubung);
+	    }
+	    
+	   
+	    echo $status;
+	}
+
 	public function show($page,$output=null){
 		$this->load->view('base/header.php');
 		$this->load->view('base/navbar.php');
