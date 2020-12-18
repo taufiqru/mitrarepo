@@ -63,7 +63,7 @@
               <div class="form-group">
                 <label for="status_kantor">Status Kepemilikan</label>
                 <select id="statuskantor" class="form-control custom-select">
-                  <option selected disabled>Pilih Salah Satu</option>
+                  <option value="" selected disabled>Pilih Salah Satu</option>
                   <option value="Aset Perusahaan">Aset Perusahaan</option>
                   <option value="Sewa">Sewa</option>
                 </select>
@@ -132,6 +132,7 @@
       <div class="row">
         <div class="col-12">
           <a href="#" class="btn btn-danger ">Cancel</a>
+          <a href="#" class="btn btn-warning" id="reset">Reset</a>
           <input type="submit" id="submit" value="Simpan" class="btn btn-success float-right">
         </div>
       </div>
@@ -161,11 +162,40 @@
         var url = "<?=base_url()?>mitra/insert";
 
         $.post(url,data,function(data,status){
-          console.log(data);
+          if(data!=false){
+              toastr.success('Data Berhasil Disimpan!');
+              reset();
+
+          }else{
+            toastr.error('Terdapat kesalahan dalam menyimpan data, silahkan coba lagi!');
+          }
         });
 
       });
+
+      $('#reset').on('click',function(){
+        reset();
+      });
+
+      function reset(){
+         $('#namaperusahaan').val("");
+         $('#kemampuannyata').val( "");
+         $('#tenagaahli').val("");
+         $('#namadirektur').val("");
+         $('#jabatandirektur').val("");
+         $('#kontakdirektur').val("");
+         $('#namanarahubung').val("");
+         $('#jabatannarahubung').val("");
+         $('#kontaknarahubung').val("");
+         $('#alamatkantor').val("");
+         $('#statuskantor').prop('selectedIndex',0);
+      }
+
+      
+
     });
+
+
 
 
   </script>

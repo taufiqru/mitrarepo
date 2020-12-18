@@ -36,38 +36,44 @@ class Mitra extends CI_Controller{
 	    $alamatkantor = $this->input->post('alamatkantor');
 	    $statuskantor = $this->input->post('statuskantor');
 
-	    $datamitra = array(
+	    if($namaperusahaan!=""){
+	    	$datamitra = array(
+	    	'id_mitra'=>null,
 	    	'nama' => $namaperusahaan,
 	    	'kemampuan_nyata' => $kemampuannyata,
 	    	'tenaga_ahli' => $tenagaahli
-	    );
+	   		 );
 
-	    $status = $this->ModelMitra->insertDataMitra($datamitra);
+		    $status = $this->ModelMitra->insertDataMitra($datamitra);
 
-	    if($status != false){
-	    	$datakantor = array(
-	    		'id_mitra' => $status,
-	    		'alamat' => $alamatkantor,
-	    		'status' => $statuskantor
-	    	);
-	    	$this->ModelMitra->insertAlamatKantor($datakantor);
+		    if($status != false){
+		    	$datakantor = array(
+		    		'id_mitra' => $status,
+		    		'alamat' => $alamatkantor,
+		    		'status' => $statuskantor
+		    	);
+		    	$this->ModelMitra->insertAlamatKantor($datakantor);
 
-	    	$datadirektur = array(
-	    		'id_mitra' => $status,
-	    		'nama' => $namadirektur,
-	    		'jabatan' => $jabatandirektur,
-	    		'kontak' => $kontakdirektur
-	    	);
-	    	$this->ModelMitra->insertDataDirektur($datadirektur);
+		    	$datadirektur = array(
+		    		'id_mitra' => $status,
+		    		'nama' => $namadirektur,
+		    		'jabatan' => $jabatandirektur,
+		    		'kontak' => $kontakdirektur
+		    	);
+		    	$this->ModelMitra->insertDataDirektur($datadirektur);
 
-	    	$datanarahubung = array(
-	    		'id_mitra' => $status,
-	    		'nama' => $namanarahubung,
-	    		'jabatan' => $jabatannarahubung,
-	    		'kontak' => $kontaknarahubung
-	    	);
-	    	$this->ModelMitra->insertDataNarahubung($datanarahubung);
+		    	$datanarahubung = array(
+		    		'id_mitra' => $status,
+		    		'nama' => $namanarahubung,
+		    		'jabatan' => $jabatannarahubung,
+		    		'kontak' => $kontaknarahubung
+		    	);
+		    	$this->ModelMitra->insertDataNarahubung($datanarahubung);
+		    }
+	    }else{
+	    	$status=false;
 	    }
+	    
 	    
 	   
 	    echo $status;
