@@ -17,8 +17,13 @@ class Mitra extends CI_Controller{
 		$crud->unset_add();
 		$crud->unset_edit();
 		$crud->unset_delete();
+		$crud->callback_column('nama',array($this,'__calback_mitra'));
 		$output = $crud->render();
 		$this->show('tabel_mitra.php',$output);
+	}
+
+	public function __calback_mitra($value,$row){
+		return "<a href='".base_url()."profile/index/".$row->id_mitra."'>$value</a>";
 	}
 
 	public function insert(){
@@ -78,6 +83,8 @@ class Mitra extends CI_Controller{
 	   
 	    echo $status;
 	}
+
+
 
 	public function show($page,$output=null){
 		$this->load->view('base/header.php');

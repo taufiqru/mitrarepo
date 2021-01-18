@@ -9,7 +9,6 @@ class ModelMitra extends CI_Model{
 		}else{
 			return $res;
 		}
-		
 	}
 
 	function insertAlamatKantor($data){
@@ -22,6 +21,11 @@ class ModelMitra extends CI_Model{
 
 	function insertDataNarahubung($data){
 		return $this->db->insert('narahubung',$data);
+	}
+
+	function getMitra($id){
+		$this->db->where('id_mitra',$id);
+		return $this->db->get('mitra')->result();
 	}
 }
 

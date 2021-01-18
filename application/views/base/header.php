@@ -20,6 +20,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="<?=base_url()?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="<?=base_url()?>dist/js/adminlte.min.js"></script>
   <script src="<?=base_url()?>plugins/toastr/toastr.min.js"></script>
+  <script src="<?=base_url()?>plugins/numeral/easy-number-separator.js"></script>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">

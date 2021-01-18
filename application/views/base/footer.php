@@ -7,6 +7,7 @@
     <!-- Default to the left -->
     <strong>Copyright &copy; 2020 Taufiqurrahman 
   </footer>
+  
 </div>
 <!-- ./wrapper -->
 

@@ -37,11 +37,11 @@
               </div>
               <div class="form-group">
                 <label for="kemampuan_nyata">Kemampuan Nyata (Rp)</label>
-                <input type="number" id="kemampuannyata" class="form-control" placeholder="Kemampuan Modal Perusahaan">
+                <input type="text" id="kemampuannyata" class="form-control number-separator" placeholder="Kemampuan Modal Perusahaan">
               </div>
               <div class="form-group">
                 <label for="tenaga_ahli">Jumlah Tenaga Ahli</label>
-                <input type="number" id="tenagaahli" class="form-control" placeholder="Tenaga Ahli Perusahaan">
+                <input type="text" id="tenagaahli" class="form-control number-separator" placeholder="Tenaga Ahli Perusahaan">
               </div>
             </div>
             <!-- /.card-body -->
@@ -190,12 +190,6 @@
          $('#alamatkantor').val("");
          $('#statuskantor').prop('selectedIndex',0);
       }
-
-      
-
     });
 
-
-
-
-  </script>
+</script>
