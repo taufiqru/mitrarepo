@@ -27,6 +27,16 @@ class ModelMitra extends CI_Model{
 		$this->db->where('id_mitra',$id);
 		return $this->db->get('mitra')->result();
 	}
+
+	function getKantor($id){
+		$this->db->where('id_mitra',$id);
+		return $this->db->get('kantor')->result();
+	}
+
+	function getWorkshop($id){
+		$this->db->where('id_mitra',$id);
+		return $this->db->get('workshop')->result();
+	}
 }
 
 ?>

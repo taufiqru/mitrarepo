@@ -18,12 +18,22 @@ class Mitra extends CI_Controller{
 		$crud->unset_edit();
 		$crud->unset_delete();
 		$crud->callback_column('nama',array($this,'__calback_mitra'));
+		$crud->callback_column('kemampuan_nyata',array($this,'__calback_kn'));
+		$crud->callback_column('tenaga_ahli',array($this,'__calback_ahli'));
 		$output = $crud->render();
 		$this->show('tabel_mitra.php',$output);
 	}
 
 	public function __calback_mitra($value,$row){
 		return "<a href='".base_url()."profile/index/".$row->id_mitra."'>$value</a>";
+	}
+
+	public function __calback_kn($value,$row){
+		return "Rp ".$value;
+	}
+
+	public function __calback_ahli($value,$row){
+		return $value." Orang";
 	}
 
 	public function insert(){

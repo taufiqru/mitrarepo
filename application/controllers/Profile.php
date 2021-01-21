@@ -9,7 +9,8 @@ class Profile extends CI_Controller {
 		$data = array();	
 
 		$data['mitra'] = $this->ModelMitra->getMitra($id);
-
+		$data['kantor'] = $this->ModelMitra->getKantor($id);
+		$data['workshop'] = $this->ModelMitra->getWorkshop($id);
 		$this->show('profile',$data);
 	}
 

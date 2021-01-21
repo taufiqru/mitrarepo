@@ -5,6 +5,10 @@ foreach($mitra as $row){
   $kemampuan_nyata = $row->kemampuan_nyata;
   $tenaga_ahli = $row->tenaga_ahli;
 }
+if(count($workshop)<=0){
+  $alamatWorkshop = "Belum Ada Data";
+  $statusWorkshop = "Belum Ada Data+";
+}
 
 ?>
 
@@ -68,17 +72,17 @@ foreach($mitra as $row){
                 <div class="tab-content">
                   <div class="tab-pane active" id="kantor">
                     <strong><i class="fas fa-map-marker-alt mr-1"></i>Alamat</strong>
-                    <p class="text-muted">Malibu, California</p>
+                    <p class="text-muted"><?=$kantor[0]->alamat;?></p>
                     <hr>
                     <strong><i class="far fa-file-alt mr-1"></i> Status Kepemilikan</strong>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                    <p class="text-muted"><?=$kantor[0]->status;?></p>
                   </div>
                   <div class="tab-pane" id="workshop">
                     <strong><i class="fas fa-map-marker-alt mr-1"></i>Alamat</strong>
-                    <p class="text-muted">Malibu, California</p>
+                    <p class="text-muted"><?=$alamatWorkshop?></p>
                     <hr>
                     <strong><i class="far fa-file-alt mr-1"></i> Status Kepemilikan</strong>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                    <p class="text-muted"><?=$statusWorkshop?></p>
                   </div>
                 </div>
                 <!-- /.tab-content -->
