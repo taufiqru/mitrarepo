@@ -16,19 +16,19 @@ if(count($workshop)<=0){
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Profil Mitra</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<?=base_url();?>profile/edit/<?=$id_mitra?>">Ubah Data Mitra</a></li>
-            </ol>
-          </div>
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Profil Mitra</h1>
         </div>
-      </div><!-- /.container-fluid -->
-    </section>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="<?=base_url();?>profile/index/<?=$id_mitra?>">&laquo;&nbsp;Kembali</a></li>
+          </ol>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
 
   <section class="content">
     <div class="container-fluid">
@@ -56,6 +56,9 @@ if(count($workshop)<=0){
                   <li class="list-group-item">
                     <b>Tags</b> <a class="float-right">None</a>
                   </li>
+                  <li class="list-group-item"></li>
+                    <button type="button" class="btn btn-block btn-primary btn-sm float-right">Edit</button>
+                  
                 </ul>
 
             </div>
@@ -75,6 +78,8 @@ if(count($workshop)<=0){
                     <hr>
                     <strong><i class="far fa-file-alt mr-1"></i> Status Kepemilikan</strong>
                     <p class="text-muted"><?=$kantor[0]->status;?></p>
+
+                    <button type="button" class="btn btn-block btn-primary btn-sm float-right">Edit</button>
                   </div>
                   <div class="tab-pane" id="workshop">
                     <strong><i class="fas fa-map-marker-alt mr-1"></i>Alamat</strong>
@@ -82,6 +87,7 @@ if(count($workshop)<=0){
                     <hr>
                     <strong><i class="far fa-file-alt mr-1"></i> Status Kepemilikan</strong>
                     <p class="text-muted"><?=$statusWorkshop?></p>
+                    <button type="button" class="btn btn-block btn-primary btn-sm float-right">Edit</button>
                   </div>
                 </div>
                 <!-- /.tab-content -->
@@ -142,6 +148,7 @@ if(count($workshop)<=0){
                     <hr>
                     <strong><i class="far fas fa-phone mr-1"></i> Kontak</strong>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                    <button type="button" style="width:200px" class="btn btn-primary btn-sm float-right">Edit</button>
                   </div>
                   <div class="tab-pane" id="cp">
                     <div class="card">
@@ -401,10 +408,29 @@ if(count($workshop)<=0){
               </div>
               <!-- /.card-footer -->
             </div>
-            
         </div>
       </div>
     </div>
-</section>
+  </section>
   
+  <div class="modal fade" id="profil" style="display:block;padding-right:17px;" arial-modal="true">
+    <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Large Modal</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>One fine body…</p>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>  
+  </div>
 </div>

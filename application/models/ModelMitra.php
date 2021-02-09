@@ -8,7 +8,7 @@ class ModelMitra extends CI_Model{
 			return $insert_id = $this->db->insert_id();	
 		}else{
 			return $res;
-		}
+		} 
 	}
 
 	function insertAlamatKantor($data){

@@ -7,12 +7,24 @@ class Profile extends CI_Controller {
 	{	$this->load->model('ModelMitra');
 
 		$data = array();	
-
+		$data['id_mitra'] = $id;
 		$data['mitra'] = $this->ModelMitra->getMitra($id);
 		$data['kantor'] = $this->ModelMitra->getKantor($id);
 		$data['workshop'] = $this->ModelMitra->getWorkshop($id);
 		$this->show('profile',$data);
 	}
+
+	public function edit($id)
+	{	$this->load->model('ModelMitra');
+
+		$data = array();	
+		$data['id_mitra'] = $id;
+		$data['mitra'] = $this->ModelMitra->getMitra($id);
+		$data['kantor'] = $this->ModelMitra->getKantor($id);
+		$data['workshop'] = $this->ModelMitra->getWorkshop($id);
+		$this->show('edit_profile',$data);
+	}
+
 
 	public function show($page,$output=null){
 		$this->load->view('base/header.php');
