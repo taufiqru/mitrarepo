@@ -14,9 +14,9 @@ class Mitra extends CI_Controller{
 		$crud = new Grocery_CRUD_Extended();
 		$crud->unset_jquery();
 		$crud->set_table('mitra');
-		$crud->unset_add();
-		$crud->unset_edit();
-		$crud->unset_delete();
+		// $crud->unset_add();
+		// $crud->unset_edit();
+		// $crud->unset_delete();
 		$crud->callback_column('nama',array($this,'__calback_mitra'));
 		$crud->callback_column('kemampuan_nyata',array($this,'__calback_kn'));
 		$crud->callback_column('tenaga_ahli',array($this,'__calback_ahli'));
